@@ -56,10 +56,10 @@ export default class View extends ViewBase {
       elementUtils.create('div', { class: 'title' }, `[${this.month}]收支统计`),
       elementUtils.create('div', { class: 'list' }, [
         elementUtils.create('div', { class: 'item' }, [
-          `收入总额：`, elementUtils.create('span', `${this.monthStatisticsMap[KBill.KType.income.value]}元`),
+          `收入总额：`, elementUtils.create('span', `${this.monthStatisticsMap[KBill.KType.income.value].toFixed(2)}元`),
         ]),
         elementUtils.create('div', { class: 'item' }, [
-          `支出总额：`, elementUtils.create('span', `${this.monthStatisticsMap[KBill.KType.expenditure.value]}元`),
+          `支出总额：`, elementUtils.create('span', `${this.monthStatisticsMap[KBill.KType.expenditure.value].toFixed(2)}元`),
         ]),
       ]),
     ]));
@@ -73,7 +73,7 @@ export default class View extends ViewBase {
       .sort((a, b) => b.amount - a.amount)
       .forEach(item => {
         els.push(elementUtils.create('div', { class: 'item' }, [
-          `${item.name}：`, elementUtils.create('span', `${item.amount}元`),
+          `${item.name}：`, elementUtils.create('span', `${item.amount.toFixed(2)}元`),
         ]));
       });
     if(els.length === 0) {

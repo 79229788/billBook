@@ -117,7 +117,7 @@ export default class View extends ViewBase {
           elementUtils.create('td', { class: 'time' }, item.get('_timeName')),
           elementUtils.create('td', { class: 'type' }, item.get('_typeName')),
           elementUtils.create('td', { class: 'cate' }, item.getCateName(this.getSources().cateIdMap)),
-          elementUtils.create('td', { class: 'amount' }, item.get('amount')),
+          elementUtils.create('td', { class: 'amount' }, item.get('_amount')),
         ]));
     });
     //如果数据不存在则添加提示行

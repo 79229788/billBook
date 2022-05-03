@@ -36,8 +36,8 @@ export class MDBill extends MDObject {
     const typeData = typeMap[this.get('type')];
     this.set('_timeName', this.getTime());
     this.set('_yearMonth', this.getTime('YYYY-MM'));
-    //this.set('_cateName', cateData && cateData.get('name') || '无分类');
     this.set('_typeName', typeData && typeData.name || '无类型');
+    this.set('_amount', (this.get('amount') || 0).toFixed(2));
   }
   /**
    * 获取格式化时间
@@ -45,6 +45,7 @@ export class MDBill extends MDObject {
    * @return {string}
    */
   getTime(format = 'YYYY-MM-DD HH:mm:ss') {
+    if(!this.get('time')) return undefined;
     const time = new Date(this.get('time'));
     const date = {
       'M+': time.getMonth() + 1,
