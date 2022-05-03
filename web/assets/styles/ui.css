@@ -1,0 +1,6 @@
+@import "../components/dropdown/style.css";
+@import "../components/popup/style.css";
+
+.ui-fade-down{opacity: 0;transform: translateY(-10px);transition: opacity 0.2s ease,transform 0.2s ease;}
+.ui-fade-down.ui-open{opacity: 1;transform: translateY(0);}
+.ui-mask{position: fixed;top: 0;left: 0;width: 120%;height: 120%;background: rgba(0,0,0, 0.5);}

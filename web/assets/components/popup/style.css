@@ -1,0 +1,7 @@
+.ui-popup{position: fixed;z-index: 999;top: 0;left: 0;width: 100%;height: 100%;}
+.ui-popup .ui-wrapper{position: absolute;top: 0;left: 0;width: 100%;height: 100%;display: table;}
+.ui-popup .ui-wrapper .ui-content{display: table-cell;vertical-align: middle;}
+.ui-popup .ui-wrapper .ui-content .ui-slot{
+  position: relative;margin: 0 auto;border-radius: 4px;
+  background: #fff;box-shadow: rgba(0,0,0, 0.2) 0 0 10px;
+}

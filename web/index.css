@@ -1,0 +1,46 @@
+@import "assets/styles/common.css";
+
+@keyframes twinkling{
+  0%{opacity: 0.5;}
+  100%{opacity: 1;}
+}
+
+html{background: #f5f5f5;}
+.no-data{color: #aaa;font-size: 14px;}
+.action-btn{cursor: pointer;}
+.bill-list .head{background: #fff;border-bottom: #e6e6e6 1px solid;}
+.bill-list .head .title{padding: 10px;text-align: center;border-bottom: #e6e6e6 1px solid;}
+.bill-list .head .title .name{height: 24px;line-height: 24px;font-weight: bold;font-size: 20px;}
+.bill-list .head .title .detail{display: inline-block;padding: 0 10px;height: 24px;line-height: 24px;font-size: 14px;color: #888;cursor: pointer;}
+.bill-list .head table{height: 44px;}
+.bill-list .head .sort-btn{position: relative;top: -2px;display: inline-block;width: 10px;height: 15px;vertical-align: middle;}
+.bill-list .head .sort-btn .btn{position: absolute;left: 0;display: inline-block;border: transparent 5px solid;width: 0;height: 0;cursor: pointer;}
+.bill-list .head .sort-btn .btn.up{top: -4px;border-bottom-color: #000;}
+.bill-list .head .sort-btn .btn.down{bottom: -4px;border-top-color: #000;}
+.bill-list .body{height: 300px;overflow: hidden auto;border-bottom: #e6e6e6 1px solid;background: #f5f5f5;}
+.bill-list .body tr td{background: #fff;}
+.bill-list .body tr:nth-child(even) td{background: #f5f5f5;}
+.bill-list .body tr.new-item td{background-color: #e8e8e8;animation: twinkling 0.3s 5 ease-in-out;}
+.bill-list .body tr.no-data td{height: 50px;line-height: 50px;}
+.bill-list .foot{background: #fff;}
+.bill-list .foot .btn{padding: 11px;text-align: center;border-bottom: #e6e6e6 1px solid;cursor: pointer;font-weight: bold;}
+
+.bill-statistics{display: flex;margin: 10px;}
+.bill-statistics:empty{display: none;}
+.bill-statistics .project{margin-right: 10px;background: #fff;padding: 15px;flex: 1;box-shadow: rgba(0,0,0, 0.05) 0px 0px 7px; }
+.bill-statistics .project:last-child{margin-right: 0;}
+.bill-statistics .title{margin-bottom: 10px;height: 20px;line-height: 20px;font-weight: bold;font-size: 16px;}
+.bill-statistics .list .item{margin: 5px 0;}
+
+.bill-form-edit-view{width: 300px;}
+.bill-form-edit-view .title{height: 44px;line-height: 44px;text-align: center;font-weight: bold;}
+.bill-form-edit-view .form{padding: 5px 10px;}
+.bill-form-edit-view .form input{border: none;outline: none;}
+.bill-form-edit-view .form .form-item{margin-bottom: 8px;padding: 10px;border: #e6e6e6 1px solid;border-radius: 4px;}
+.bill-form-edit-view .form .form-item:last-child{margin-bottom: 0;}
+.bill-form-edit-view .form .form-item .wrap{display: flex;}
+.bill-form-edit-view .form .form-item input{flex: 1;}
+.bill-form-edit-view .form .form-item .tips{margin-top: 2px;font-size: 12px;color: #ff5722;}
+.bill-form-edit-view .form .form-item .tips:empty{display: none;}
+.bill-form-edit-view .submit{padding: 10px;}
+.bill-form-edit-view .submit .btn{padding: 12px;text-align: center;background: #22baf7;color: #fff;border-radius: 4px;cursor: pointer;}
