@@ -17,11 +17,11 @@ export class MDBill extends MDObject {
         required: true,
         message: '请选择账单类型',
       },
-      category: {
-        type: 'string',
-        required: true,
-        message: '请选择账单分类',
-      },
+      // category: {
+      //   type: 'string',
+      //   required: true,
+      //   message: '请选择账单分类',
+      // },
       amount: {
         type: 'number',
         required: true,

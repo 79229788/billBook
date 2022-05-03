@@ -20,10 +20,10 @@ export default class View extends ViewBase {
   constructor(controller) {
     super(...arguments);
     this.formOptions = [
-      { key: 'time', title: '账单时间', type: 'text', placeholder: '请选择账单时间', mode: 'picker' },
-      { key: 'type', title: '账单类型', type: 'text', placeholder: '请选择账单类型', mode: 'picker' },
+      { key: 'time', title: '账单时间', type: 'text', placeholder: '请选择账单时间', mode: 'picker', required: true },
+      { key: 'type', title: '账单类型', type: 'text', placeholder: '请选择账单类型', mode: 'picker', required: true },
       { key: 'category', title: '账单分类', type: 'text', placeholder: '请选择账单分类', mode: 'picker' },
-      { key: 'amount', title: '账单金额', type: 'number', placeholder: '请填写账单金额', mode: 'input' },
+      { key: 'amount', title: '账单金额', type: 'number', placeholder: '请填写账单金额', mode: 'input', required: true },
     ];
   }
   /**
@@ -63,7 +63,7 @@ export default class View extends ViewBase {
       }
       formItemElements.push(elementUtils.create('div', { class: 'form-item' }, [
         elementUtils.create('div', { class: 'wrap' }, [
-          elementUtils.create('span', `${item.title}：`),
+          elementUtils.create('span', { class: item.required ? 'required' : undefined }, `${item.title}：`),
           elementUtils.create('input', inputAttrs),
         ]),
         elementUtils.create('div', { class: 'tips', 'data-key': item.key }),
