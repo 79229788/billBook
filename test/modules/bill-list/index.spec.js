@@ -28,22 +28,22 @@ describe('modules: bill-list', () => {
       bc.onListenListData('reset', { models: [bc.billCollection.get(0)] });
       const $tableRow = document.querySelector('.bill-list .body table tr');
       expect(!!$tableRow).to.equal(true);
-      expect($tableRow.querySelectorAll('td')[3].innerText).to.equal('3000');
+      expect($tableRow.querySelectorAll('td')[3].innerText).to.equal('3000.00');
       //test push
       bc.onListenListData('push', { model: bc.billCollection.get(1) });
       expect(document
         .querySelectorAll('.bill-list .body table tr')[1]
-        .querySelectorAll('td')[3].innerText).to.equal('3900');
+        .querySelectorAll('td')[3].innerText).to.equal('3900.00');
       //test unshift
       bc.onListenListData('unshift', { model: bc.billCollection.get(1) });
       expect(document
         .querySelectorAll('.bill-list .body table tr')[0]
-        .querySelectorAll('td')[3].innerText).to.equal('3900');
+        .querySelectorAll('td')[3].innerText).to.equal('3900.00');
       //test insert
       bc.onListenListData('insert', { model: bc.billCollection.get(0), index: 1 });
       expect(document
         .querySelectorAll('.bill-list .body table tr')[1]
-        .querySelectorAll('td')[3].innerText).to.equal('3000');
+        .querySelectorAll('td')[3].innerText).to.equal('3000.00');
       done();
     });
   });
@@ -91,7 +91,7 @@ describe('modules: bill-list', () => {
       bc.onSortData(null, 'amount', 'down', value => value);
       expect(document
         .querySelector('.bill-list .body table tr')
-        .querySelectorAll('td')[3].innerText).to.equal('5400');
+        .querySelectorAll('td')[3].innerText).to.equal('5400.00');
       done();
     }, 500);
   });
@@ -107,7 +107,7 @@ describe('modules: bill-list', () => {
       bc.onCreateListItem();
       expect(document
         .querySelector('.bill-list .body table tr')
-        .querySelectorAll('td')[3].innerText).to.equal('3100');
+        .querySelectorAll('td')[3].innerText).to.equal('3100.00');
       done();
     }, 500);
   });
